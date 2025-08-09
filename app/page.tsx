@@ -1,711 +1,263 @@
 'use client';
-import { 
-  Container, Typography, Box, Button, Card, CardContent, 
-  useTheme, alpha, Fade, Zoom, Chip, Avatar, Rating, Paper, Grid
-} from '@mui/material';
 import { useRouter } from 'next/navigation';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import PreviewIcon from '@mui/icons-material/Preview';
-import FolderIcon from '@mui/icons-material/Folder';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import SpeedIcon from '@mui/icons-material/Speed';
-import SecurityIcon from '@mui/icons-material/Security';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import StarIcon from '@mui/icons-material/Star';
-import PersonIcon from '@mui/icons-material/Person';
-import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
-import CloudIcon from '@mui/icons-material/Cloud';
-import PaletteIcon from '@mui/icons-material/Palette';
-import { useState, useEffect } from 'react';
 import FormBuilderChatbot from '../components/FormBuilderChatbot';
 
 export default function Home() {
   const router = useRouter();
-  const theme = useTheme();
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
 
   const features = [
     {
-      title: 'AI-Powered Form Builder',
-      description: 'Create sophisticated forms with AI assistance, drag & drop interface, and smart validation',
-      icon: <AddCircleOutlineIcon fontSize="large" />,
-      path: '/form-builder',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      delay: 100,
-      badge: 'AI Powered'
+      title: 'AI Form Builder',
+      description: 'Create forms quickly with AI assistance',
+      icon: '🧠',
+      path: '/form-builder'
     },
     {
-      title: 'Real-Time Preview',
-      description: 'Test and interact with your forms instantly with live preview and validation feedback',
-      icon: <PreviewIcon fontSize="large" />,
-      path: '/preview',
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-      delay: 200,
-      badge: 'Live Preview'
+      title: 'Live Preview',
+      description: 'Test your forms in real-time',
+      icon: '⚡',
+      path: '/preview'
     },
     {
-      title: 'Smart Dashboard',
-      description: 'Organize, manage, and analyze all your forms in one beautiful, intuitive dashboard',
-      icon: <FolderIcon fontSize="large" />,
-      path: '/myforms',
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-      delay: 300,
-      badge: 'Pro Dashboard'
+      title: 'My Forms',
+      description: 'Manage and organize your forms',
+      icon: '📊',
+      path: '/myforms'
     },
   ];
 
   const stats = [
-    { label: 'Forms Created', value: '50K+', icon: <RocketLaunchIcon /> },
-    { label: 'Happy Users', value: '10K+', icon: <PersonIcon /> },
-    { label: 'Uptime', value: '99.9%', icon: <SpeedIcon /> },
-    { label: 'User Rating', value: '4.9★', icon: <StarIcon /> },
-  ];
-
-  const highlights = [
-    {
-      icon: <AutoAwesomeIcon sx={{ fontSize: 40 }} />,
-      title: 'AI-Powered Generation',
-      description: 'Generate complete forms instantly using our advanced AI assistant with natural language processing',
-      color: '#FF6B6B'
-    },
-    {
-      icon: <SpeedIcon sx={{ fontSize: 40 }} />,
-      title: 'Lightning Performance',
-      description: 'Built with Next.js 14 and optimized for maximum speed with server-side rendering',
-      color: '#4ECDC4'
-    },
-    {
-      icon: <SecurityIcon sx={{ fontSize: 40 }} />,
-      title: 'Enterprise Security',
-      description: 'Advanced validation, data encryption, and compliance with industry security standards',
-      color: '#45B7D1'
-    },
-    {
-      icon: <MobileScreenShareIcon sx={{ fontSize: 40 }} />,
-      title: 'Mobile-First Design',
-      description: 'Responsive forms that work flawlessly across all devices and screen sizes',
-      color: '#96CEB4'
-    },
-    {
-      icon: <CloudIcon sx={{ fontSize: 40 }} />,
-      title: 'Cloud Native',
-      description: 'Deploy anywhere with our scalable, cloud-ready architecture and global CDN',
-      color: '#FFEAA7'
-    },
-    {
-      icon: <PaletteIcon sx={{ fontSize: 40 }} />,
-      title: 'Beautiful Interface',
-      description: 'Stunning modern UI with customizable themes and smooth animations',
-      color: '#DDA0DD'
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Mitchell',
-      role: 'Product Manager',
-      company: 'TechFlow Solutions',
-      avatar: 'S',
-      rating: 5,
-      text: 'Form Builder Pro transformed our data collection process. The AI assistant alone saved us 20+ hours per week!'
-    },
-    {
-      name: 'David Chen',
-      role: 'Lead Developer',
-      company: 'InnovateLab',
-      avatar: 'D',
-      rating: 5,
-      text: 'The most intuitive form builder I\'ve used. Derived fields and real-time validation are absolutely game-changing.'
-    },
-    {
-      name: 'Maria Rodriguez',
-      role: 'UX Designer',
-      company: 'Creative Studio',
-      avatar: 'M',
-      rating: 5,
-      text: 'Our clients love the beautiful, responsive forms. The preview feature makes iteration so much faster!'
-    },
-  ];
-
-  const pricingFeatures = [
-    'Unlimited Form Creation',
-    'AI-Powered Generation',
-    'Real-time Live Preview',
-    'Advanced Validation Rules',
-    'Calculated Derived Fields',
-    'Mobile-Responsive Design',
-    'Cloud Deployment Ready',
-    'Priority Support 24/7'
+    { label: 'Forms Created', value: '150K+', icon: '🚀' },
+    { label: 'Happy Users', value: '25K+', icon: '😊' },
+    { label: 'Success Rate', value: '99.9%', icon: '⚡' },
+    { label: 'User Rating', value: '4.9★', icon: '⭐' },
   ];
 
   return (
-    <Box sx={{ overflow: 'hidden' }}>
-      {/* Hero Section */}
-      <Container maxWidth="xl">
-        <Fade in={animate} timeout={1200}>
-          <Box 
-            sx={{ 
-              textAlign: 'center', 
-              py: { xs: 8, md: 12 },
-              position: 'relative',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: `radial-gradient(ellipse at center, ${alpha(theme.palette.primary.main, 0.1)} 0%, transparent 70%)`,
-                pointerEvents: 'none',
-              }
-            }}
-          >
-            <Box sx={{ position: 'relative', zIndex: 1 }}>
-              <Chip 
-                label="✨ AI-Powered Form Builder" 
-                color="primary" 
-                sx={{ 
-                  mb: 4,
-                  px: 3,
-                  py: 1,
-                  fontSize: '0.9rem',
-                  fontWeight: 600,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                  animation: 'pulse 2s infinite',
-                  '@keyframes pulse': {
-                    '0%': { opacity: 1, transform: 'scale(1)' },
-                    '50%': { opacity: 0.8, transform: 'scale(1.05)' },
-                    '100%': { opacity: 1, transform: 'scale(1)' }
-                  }
-                }} 
-              />
-              
-              <Typography 
-                variant="h1" 
-                component="h1" 
-                gutterBottom
-                sx={{
-                  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  mb: 4,
-                  fontWeight: 900,
-                  letterSpacing: '-0.02em',
-                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4.5rem', lg: '6rem' },
-                  lineHeight: 0.9,
-                }}
-              >
-                Build Beautiful Forms
-                <br />
-                <Typography 
-                  component="span" 
-                  variant="h1"
-                  sx={{
-                    background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%, ${theme.palette.error.main} 100%)`,
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontSize: 'inherit',
-                    fontWeight: 'inherit'
-                  }}
-                >
-                  in Minutes
-                </Typography>
-              </Typography>
-              
-              <Typography 
-                variant="h5" 
-                color="text.secondary" 
-                paragraph
-                sx={{ 
-                  maxWidth: 800, 
-                  mx: 'auto',
-                  fontSize: { xs: '1.1rem', md: '1.4rem' },
-                  lineHeight: 1.6,
-                  mb: 6,
-                  fontWeight: 400,
-                }}
-              >
-                Create professional, responsive forms with AI assistance, advanced validation, 
-                and real-time preview. No coding required – just describe what you need.
-              </Typography>
-              
-              {/* Action Buttons */}
-              <Box 
-                sx={{ 
-                  display: 'flex', 
-                  gap: 3, 
-                  justifyContent: 'center', 
-                  flexWrap: 'wrap',
-                  mb: 8
-                }}
-              >
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<RocketLaunchIcon />}
-                  onClick={() => router.push('/form-builder')}
-                  sx={{
-                    px: 6,
-                    py: 2,
-                    fontSize: '1.2rem',
-                    fontWeight: 700,
-                    borderRadius: 3,
-                    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                    boxShadow: `0 12px 40px ${alpha(theme.palette.primary.main, 0.4)}`,
-                    textTransform: 'none',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    '&:hover': {
-                      transform: 'translateY(-3px)',
-                      boxShadow: `0 20px 60px ${alpha(theme.palette.primary.main, 0.5)}`,
-                    },
-                  }}
-                >
-                  Start Building Free
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  startIcon={<PlayArrowIcon />}
-                  onClick={() => router.push('/preview')}
-                  sx={{
-                    px: 6,
-                    py: 2,
-                    fontSize: '1.2rem',
-                    fontWeight: 600,
-                    borderRadius: 3,
-                    borderWidth: 2,
-                    textTransform: 'none',
-                    borderColor: theme.palette.primary.main,
-                    color: theme.palette.primary.main,
-                    '&:hover': {
-                      borderWidth: 2,
-                      backgroundColor: alpha(theme.palette.primary.main, 0.1),
-                      transform: 'translateY(-2px)',
-                    },
-                  }}
-                >
-                  Watch Demo
-                </Button>
-              </Box>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc' }}>
+      {/* Simple CSS Styles */}
+      <style jsx>{`
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        
+        .btn-primary {
+          background-color: #3b82f6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          padding: 12px 24px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+          background-color: #2563eb;
+        }
+        
+        .btn-secondary {
+          background-color: transparent;
+          color: #374151;
+          border: 2px solid #d1d5db;
+          border-radius: 8px;
+          padding: 10px 22px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        
+        .btn-secondary:hover {
+          border-color: #9ca3af;
+          background-color: #f9fafb;
+        }
+        
+        .card {
+          background: white;
+          border-radius: 12px;
+          padding: 24px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e5e7eb;
+          transition: box-shadow 0.2s;
+        }
+        
+        .card:hover {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grid-3 {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 24px;
+        }
+        
+        .stats-grid {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 32px;
+          margin: 60px 0;
+        }
+        
+        @media (max-width: 768px) {
+          .grid-3 {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          
+          .stats-grid {
+            gap: 20px;
+          }
+        }
+      `}</style>
 
-              {/* Stats Row */}
-              <Box 
-                sx={{ 
-                  display: 'grid',
-                  gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)' },
-                  gap: 4,
-                  justifyContent: 'center',
-                  mb: 4
-                }}
-              >
-                {stats.map((stat, index) => (
-                  <Zoom in={animate} timeout={800} style={{ transitionDelay: `${index * 200}ms` }} key={stat.label}>
-                    <Box sx={{ textAlign: 'center' }}>
-                      <Box sx={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center', 
-                        mb: 1,
-                        color: theme.palette.primary.main
-                      }}>
-                        {stat.icon}
-                        <Typography variant="h3" fontWeight={800} sx={{ ml: 1 }}>
-                          {stat.value}
-                        </Typography>
-                      </Box>
-                      <Typography variant="body2" color="text.secondary" fontWeight={600}>
-                        {stat.label}
-                      </Typography>
-                    </Box>
-                  </Zoom>
-                ))}
-              </Box>
-            </Box>
-          </Box>
-        </Fade>
-      </Container>
+      {/* Hero Section */}
+      <div style={{ padding: '80px 0', textAlign: 'center', backgroundColor: 'white' }}>
+        <div className="container">
+          <h1 style={{ fontSize: '3rem', fontWeight: 'bold', color: '#111827', marginBottom: '24px' }}>
+            Build Beautiful Forms
+          </h1>
+          
+          <p style={{ fontSize: '1.25rem', color: '#6b7280', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
+            Create, customize, and deploy professional forms in minutes with our simple form builder.
+          </p>
+          
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => router.push('/form-builder')}
+              className="btn-primary"
+            >
+              Start Building
+            </button>
+            
+            <button
+              onClick={() => router.push('/preview')}
+              className="btn-secondary"
+            >
+              View Demo
+            </button>
+          </div>
+          
+          {/* Stats */}
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{stat.icon}</div>
+                <div style={{ fontSize: '1.75rem', fontWeight: 'bold', color: '#111827', marginBottom: '4px' }}>
+                  {stat.value}
+                </div>
+                <div style={{ color: '#6b7280', fontSize: '0.9rem' }}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Features Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: alpha(theme.palette.primary.main, 0.02) }}>
-        <Container maxWidth="xl">
-          <Fade in={animate} timeout={1000} style={{ transitionDelay: '200ms' }}>
-            <Box sx={{ textAlign: 'center', mb: 8 }}>
-              <Typography variant="h2" fontWeight={700} gutterBottom>
-                Everything You Need
-              </Typography>
-              <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-                Powerful features designed to make form building effortless and enjoyable
-              </Typography>
-            </Box>
-          </Fade>
-
-          <Box 
-            sx={{ 
-              display: 'grid',
-              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-              gap: 4
-            }}
-          >
+      <div style={{ padding: '80px 0', backgroundColor: '#f8fafc' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#111827', marginBottom: '16px' }}>
+              Simple & Powerful
+            </h2>
+            <p style={{ fontSize: '1.1rem', color: '#6b7280' }}>
+              Everything you need to create professional forms
+            </p>
+          </div>
+          
+          <div className="grid-3">
             {features.map((feature, index) => (
-              <Zoom in={animate} timeout={800} style={{ transitionDelay: `${200 + index * 100}ms` }} key={feature.title}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    borderRadius: 4,
-                    border: `1px solid ${alpha(theme.palette.primary.main, 0.1)}`,
-                    background: alpha(theme.palette.background.paper, 0.8),
-                    backdropFilter: 'blur(20px)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: `0 20px 60px ${alpha(theme.palette.primary.main, 0.2)}`,
-                      '& .feature-badge': {
-                        transform: 'scale(1.1)',
-                      },
-                      '& .feature-icon': {
-                        transform: 'scale(1.1) rotate(5deg)',
-                      }
-                    },
-                  }}
-                  onClick={() => router.push(feature.path)}
-                >
-                  {/* Gradient Background */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: feature.gradient,
-                      opacity: 0.05,
-                      transition: 'opacity 0.3s ease',
-                    }}
-                  />
-                  
-                  <CardContent sx={{ p: 5, position: 'relative', textAlign: 'center' }}>
-                    <Box sx={{ position: 'relative', mb: 3 }}>
-                      <Chip 
-                        label={feature.badge}
-                        className="feature-badge"
-                        size="small"
-                        color="primary"
-                        sx={{ 
-                          position: 'absolute',
-                          top: -10,
-                          right: -10,
-                          fontSize: '0.75rem',
-                          fontWeight: 600,
-                          transition: 'all 0.3s ease',
-                        }}
-                      />
-                      <Box 
-                        className="feature-icon"
-                        sx={{ 
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          width: 80,
-                          height: 80,
-                          borderRadius: 3,
-                          background: feature.gradient,
-                          color: 'white',
-                          mx: 'auto',
-                          boxShadow: `0 12px 30px ${alpha(theme.palette.primary.main, 0.3)}`,
-                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                        }}
-                      >
-                        {feature.icon}
-                      </Box>
-                    </Box>
-                    
-                    <Typography 
-                      variant="h5" 
-                      component="h2" 
-                      gutterBottom 
-                      fontWeight={700}
-                      sx={{ 
-                        mb: 2,
-                        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                      }}
-                    >
-                      {feature.title}
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary" lineHeight={1.6}>
-                      {feature.description}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Zoom>
-            ))}
-            </Box>
-        </Container>
-      </Box>
-
-      {/* Highlights Section */}
-      <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 } }}>
-        <Fade in={animate} timeout={1200} style={{ transitionDelay: '400ms' }}>
-          <Box sx={{ textAlign: 'center', mb: 8 }}>
-            <Typography variant="h2" fontWeight={700} gutterBottom>
-              Why Choose Form Builder Pro?
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 700, mx: 'auto' }}>
-              Advanced features that set us apart from the competition
-            </Typography>
-          </Box>
-        </Fade>
-
-        <Box 
-          sx={{ 
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' },
-            gap: 4
-          }}
-        >
-          {highlights.map((highlight, index) => (
-            <Zoom in={animate} timeout={800} style={{ transitionDelay: `${500 + index * 100}ms` }} key={highlight.title}>
-              <Paper
-                sx={{
-                  p: 4,
-                  height: '100%',
-                  textAlign: 'center',
-                  borderRadius: 3,
-                  border: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    boxShadow: `0 15px 40px ${alpha(highlight.color, 0.15)}`,
-                  }
-                }}
+              <div
+                key={index}
+                className="card"
+                onClick={() => router.push(feature.path)}
+                style={{ cursor: 'pointer', textAlign: 'center' }}
               >
-                <Box
-                  sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: 80,
-                    height: 80,
-                    borderRadius: '50%',
-                    backgroundColor: alpha(highlight.color, 0.1),
-                    color: highlight.color,
-                    mb: 3,
-                  }}
-                >
-                  {highlight.icon}
-                </Box>
-                <Typography variant="h5" fontWeight={600} gutterBottom>
-                  {highlight.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary" lineHeight={1.7}>
-                  {highlight.description}
-                </Typography>
-              </Paper>
-            </Zoom>
-          ))}
-        </Box>
-      </Container>
-
-      {/* Testimonials Section */}
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: alpha(theme.palette.secondary.main, 0.02) }}>
-        <Container maxWidth="lg">
-          <Fade in={animate} timeout={1000} style={{ transitionDelay: '600ms' }}>
-            <Box sx={{ textAlign: 'center', mb: 8 }}>
-              <Typography variant="h2" fontWeight={700} gutterBottom>
-                Loved by Professionals
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                See what our users say about Form Builder Pro
-              </Typography>
-            </Box>
-          </Fade>
-
-          <Box 
-            sx={{ 
-              display: 'grid',
-              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-              gap: 4
-            }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <Zoom in={animate} timeout={800} style={{ transitionDelay: `${700 + index * 150}ms` }} key={testimonial.name}>
-                <Paper
-                  sx={{
-                    p: 4,
-                    height: '100%',
-                    borderRadius: 3,
-                    position: 'relative',
-                    border: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
-                  }}
-                >
-                  <Rating value={testimonial.rating} readOnly sx={{ mb: 2 }} />
-                  <Typography variant="body1" sx={{ mb: 3, fontStyle: 'italic', lineHeight: 1.7 }}>
-                    "{testimonial.text}"
-                  </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                    <Avatar sx={{ bgcolor: theme.palette.primary.main }}>
-                      {testimonial.avatar}
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle1" fontWeight={600}>
-                        {testimonial.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {testimonial.role} at {testimonial.company}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Paper>
-              </Zoom>
+                <div style={{ fontSize: '3rem', marginBottom: '20px' }}>
+                  {feature.icon}
+                </div>
+                
+                <h3 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#111827', marginBottom: '12px' }}>
+                  {feature.title}
+                </h3>
+                
+                <p style={{ color: '#6b7280', lineHeight: '1.5' }}>
+                  {feature.description}
+                </p>
+              </div>
             ))}
-          </Box>
-        </Container>
-      </Box>
+          </div>
+        </div>
+      </div>
 
-      {/* Pricing Section */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
-        <Fade in={animate} timeout={1000} style={{ transitionDelay: '800ms' }}>
-          <Box sx={{ textAlign: 'center', mb: 8 }}>
-            <Typography variant="h2" fontWeight={700} gutterBottom>
-              Simple, Transparent Pricing
-            </Typography>
-            <Typography variant="h6" color="text.secondary">
-              Everything you need to build amazing forms
-            </Typography>
-          </Box>
-        </Fade>
-
-        <Zoom in={animate} timeout={1000} style={{ transitionDelay: '900ms' }}>
-          <Paper
-            sx={{
-              p: 6,
-              textAlign: 'center',
-              borderRadius: 4,
-              border: `2px solid ${theme.palette.primary.main}`,
-              background: `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0.05)} 0%, ${alpha(theme.palette.secondary.main, 0.05)} 100%)`,
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <Chip 
-              label="🚀 Most Popular" 
-              color="primary" 
-              sx={{ 
-                mb: 3,
-                fontSize: '1rem',
-                fontWeight: 600,
-                px: 3,
-                py: 1
-              }} 
-            />
-            
-            <Typography variant="h3" fontWeight={800} gutterBottom>
-              Free Forever
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-              All features included, no limits, no credit card required
-            </Typography>
-
-            <Box sx={{ mb: 4 }}>
-              <Box 
-                sx={{ 
-                  display: 'grid',
-                  gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
-                  gap: 2
-                }}
-              >
-                {pricingFeatures.map((feature, index) => (
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }} key={feature}>
-                    <CheckCircleIcon color="primary" fontSize="small" />
-                    <Typography variant="body1">{feature}</Typography>
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-
-            <Button
-              variant="contained"
-              size="large"
-              startIcon={<RocketLaunchIcon />}
-              onClick={() => router.push('/form-builder')}
-              sx={{
-                px: 6,
-                py: 2,
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                borderRadius: 3,
-                background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                textTransform: 'none',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                },
-              }}
-            >
-              Get Started Now
-            </Button>
-          </Paper>
-        </Zoom>
-      </Container>
+      {/* Testimonial Section */}
+      <div style={{ padding: '80px 0', backgroundColor: 'white' }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <div className="card">
+              <div style={{ marginBottom: '20px' }}>
+                <div style={{ color: '#fbbf24', fontSize: '1.5rem', marginBottom: '16px' }}>
+                  ⭐⭐⭐⭐⭐
+                </div>
+                <p style={{ fontSize: '1.1rem', color: '#374151', marginBottom: '24px', lineHeight: '1.6', fontStyle: 'italic' }}>
+                  "The most intuitive form builder I have ever used. Simple, fast, and gets the job done perfectly."
+                </p>
+                <div>
+                  <div style={{ fontWeight: '600', color: '#111827' }}>Sarah Chen</div>
+                  <div style={{ color: '#6b7280', fontSize: '0.9rem' }}>Product Manager at TechCorp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* CTA Section */}
-      <Box 
-        sx={{ 
-          py: { xs: 8, md: 12 },
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-          color: 'white',
-          textAlign: 'center'
-        }}
-      >
-        <Container maxWidth="md">
-          <Fade in={animate} timeout={1000} style={{ transitionDelay: '1000ms' }}>
-            <Box>
-              <Typography variant="h2" fontWeight={700} gutterBottom>
-                Ready to Build Something Amazing?
-              </Typography>
-              <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
-                Join thousands of professionals who trust Form Builder Pro
-              </Typography>
-              <Button
-                variant="contained"
-                size="large"
-                startIcon={<RocketLaunchIcon />}
-                onClick={() => router.push('/form-builder')}
-                sx={{
-                  px: 6,
-                  py: 2,
-                  fontSize: '1.2rem',
-                  fontWeight: 700,
-                  borderRadius: 3,
-                  backgroundColor: '#ffffff',
-                  color: theme.palette.primary.main,
-                  textTransform: 'none',
-                  '&:hover': {
-                    backgroundColor: alpha('#ffffff', 0.9),
-                    transform: 'translateY(-2px)',
-                  },
-                }}
-              >
-                Start Building Today
-              </Button>
-            </Box>
-          </Fade>
-        </Container>
-      </Box>
-      
-      {/* Form Builder Chatbot */}
+      <div style={{ padding: '80px 0', backgroundColor: '#3b82f6', color: 'white', textAlign: 'center' }}>
+        <div className="container">
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '16px' }}>
+            Ready to Get Started?
+          </h2>
+          <p style={{ fontSize: '1.1rem', marginBottom: '32px', opacity: '0.9' }}>
+            Join thousands of users who create beautiful forms every day
+          </p>
+          <button
+            onClick={() => router.push('/form-builder')}
+            style={{
+              backgroundColor: 'white',
+              color: '#3b82f6',
+              border: 'none',
+              borderRadius: '8px',
+              padding: '14px 32px',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'transform 0.2s'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+          >
+            Start Building Now
+          </button>
+        </div>
+      </div>
+
+      {/* Simple Footer */}
+      <div style={{ padding: '40px 0', backgroundColor: '#1f2937', color: 'white', textAlign: 'center' }}>
+        <div className="container">
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '12px' }}>FormBuilder</h3>
+          <p style={{ color: '#9ca3af', fontSize: '0.9rem' }}>
+            © 2024 FormBuilder. Simple forms, powerful results.
+          </p>
+        </div>
+      </div>
+
+      {/* Chatbot */}
       <FormBuilderChatbot />
-    </Box>
+    </div>
   );
 }
