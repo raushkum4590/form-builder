@@ -23,8 +23,10 @@ const nextConfig: NextConfig = {
     
     return config;
   },
-  // Disable static optimization for pages using dynamic imports
-  output: 'standalone',
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 };
 
 export default nextConfig;

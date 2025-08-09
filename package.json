@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf .next",
+    "deploy": "npm run clean && npm run build"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
