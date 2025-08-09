@@ -300,12 +300,19 @@ export default function Home() {
               </Box>
 
               {/* Stats Row */}
-              <Grid container spacing={4} justifyContent="center" sx={{ mb: 4 }}>
+              <Box 
+                sx={{ 
+                  display: 'grid',
+                  gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)' },
+                  gap: 4,
+                  justifyContent: 'center',
+                  mb: 4
+                }}
+              >
                 {stats.map((stat, index) => (
-                  <Grid item xs={6} sm={3} key={stat.label}>
-                    <Zoom in={animate} timeout={800} style={{ transitionDelay: `${index * 200}ms` }}>
-                      <Box sx={{ textAlign: 'center' }}>
-                        <Box sx={{ 
+                  <Zoom in={animate} timeout={800} style={{ transitionDelay: `${index * 200}ms` }} key={stat.label}>
+                    <Box sx={{ textAlign: 'center' }}>
+                      <Box sx={{ 
                           display: 'flex', 
                           alignItems: 'center', 
                           justifyContent: 'center', 
